@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-500 text-secondary-100 font-body antialiased;
+    background-image:
+      radial-gradient(ellipse at top, rgba(242, 117, 15, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(235, 95, 84, 0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  ::selection {
+    @apply bg-primary-500/30 text-white;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-secondary-300 hover:text-primary-400 transition-colors duration-300 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-dark-950 font-sans font-semibold rounded-lg shadow-glow hover:shadow-glow-lg hover:from-primary-500 hover:to-primary-400 transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-primary-500 text-primary-400 font-sans font-semibold rounded-lg hover:bg-primary-500/10 transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  .section-title {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl text-center mb-4 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  .section-subtitle {
+    @apply text-secondary-400 text-center max-w-2xl mx-auto text-lg;
+  }
+
+  .feature-card {
+    @apply bg-dark-400/50 backdrop-blur-sm border border-dark-50/10 rounded-xl p-6 transition-all duration-300 hover:border-primary-500/30 hover:shadow-glow;
+  }
+
+  .card-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d-inner {
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .card-3d.flipped .card-3d-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  .filter-btn {
+    @apply px-4 py-2 text-sm font-sans font-medium rounded-lg transition-all duration-300;
+  }
+
+  .filter-btn.active {
+    @apply bg-primary-500 text-dark-950 shadow-glow;
+  }
+
+  .filter-btn:not(.active) {
+    @apply bg-dark-400/50 text-secondary-300 hover:bg-dark-300/50 hover:text-secondary-100 border border-dark-50/10;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(242, 117, 15, 0.5), 0 0 20px rgba(242, 117, 15, 0.3);
+  }
+
+  .atmospheric-bg {
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(242, 117, 15, 0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 80%, rgba(235, 95, 84, 0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(242, 117, 15, 0.04) 0%, transparent 50%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+}
