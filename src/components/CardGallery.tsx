@@ -31,23 +31,20 @@ function FlipCard({ card }: FlipCardProps) {
           className="absolute inset-0 rounded-xl overflow-hidden bg-dark-400 border border-dark-50/10 shadow-lg group-hover:shadow-glow group-hover:border-primary-500/30 transition-all"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent" />
-          <div className="h-full flex flex-col">
-            <div className="flex-1 flex items-center justify-center p-4">
-              <div className="w-full h-full bg-gradient-to-br from-dark-300 to-dark-500 rounded-lg border border-dark-50/20 flex items-center justify-center">
-                <span className="text-secondary-500 font-display text-sm text-center px-2">
-                  {card.frontImage}
-                </span>
-              </div>
-            </div>
-            <div className="p-3 border-t border-dark-50/10 bg-dark-400/50">
-              <h3 className="font-display text-sm font-semibold text-secondary-100 truncate">
-                {card.name}
-              </h3>
-              <p className="text-xs text-primary-400 font-sans mt-0.5">
-                {card.type}
-              </p>
-            </div>
+          <img
+            src={`/${card.frontImage}`}
+            alt={card.name}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              target.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+          <div className="hidden absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent flex items-center justify-center">
+            <span className="text-secondary-500 font-display text-sm text-center px-2">
+              {card.name}
+            </span>
           </div>
         </div>
 
@@ -55,13 +52,20 @@ function FlipCard({ card }: FlipCardProps) {
           className="absolute inset-0 rounded-xl overflow-hidden bg-dark-400 border border-primary-500/30 shadow-glow"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent" />
-          <div className="h-full flex items-center justify-center p-4">
-            <div className="w-full h-full bg-gradient-to-br from-dark-300 to-dark-500 rounded-lg border border-dark-50/20 flex items-center justify-center">
-              <span className="text-secondary-500 font-display text-sm text-center px-2">
-                {backImage}
-              </span>
-            </div>
+          <img
+            src={`/${backImage}`}
+            alt="Card back"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              target.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+          <div className="hidden absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent flex items-center justify-center">
+            <span className="text-secondary-500 font-display text-sm text-center px-2">
+              Card Back
+            </span>
           </div>
         </div>
       </motion.div>
