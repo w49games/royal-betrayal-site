@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface GiscusCommentsProps {
   repo?: string;
@@ -24,13 +24,23 @@ export function GiscusComments({
   reactionsEnabled = '1',
   emitMetadata = '0',
   inputPosition = 'bottom',
-  theme = 'preferred_color_scheme',
+  theme = 'dark_dimmed',
   lang = 'en',
 }: GiscusCommentsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
+
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin !== 'https://giscus.app') return;
+      if (event.data?.giscus?.discussion) {
+        setIsLoaded(true);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
 
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
@@ -51,6 +61,7 @@ export function GiscusComments({
     containerRef.current.appendChild(script);
 
     return () => {
+      window.removeEventListener('message', handleMessage);
       if (containerRef.current) {
         const giscusIframe = containerRef.current.querySelector('iframe.giscus-frame');
         if (giscusIframe) {
@@ -61,5 +72,13 @@ export function GiscusComments({
     };
   }, [repo, repoId, category, categoryId, mapping, strict, reactionsEnabled, emitMetadata, inputPosition, theme, lang]);
 
-  return <div ref={containerRef} className="giscus" />;
+  return (
+    <div
+      className={`max-w-4xl mx-auto p-6 rounded-xl bg-dark-400/30 backdrop-blur-sm border border-dark-50/10 transition-opacity duration-500 ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
+      <div ref={containerRef} className="giscus" />
+    </div>
+  );
 }
