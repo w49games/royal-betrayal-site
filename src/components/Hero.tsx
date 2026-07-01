@@ -104,7 +104,7 @@ export function Hero() {
             </motion.a>
 
             <motion.a
-              href="https://www.tabletopia.com"
+              href="https://tabletopia.com/games/royalbetrayal-6d8zi1/play-now"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(242, 117, 15, 0.5)' }}
