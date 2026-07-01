@@ -96,7 +96,7 @@ export function Rulebook() {
           className="text-center"
         >
           <motion.a
-            href="#"
+            href="/rulebook.pdf"
             whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(242, 117, 15, 0.4)' }}
             whileTap={{ scale: 0.95 }}
             className="btn-primary inline-flex items-center gap-2"
