@@ -41,7 +41,7 @@ export function Footer() {
               <ExternalLink className="w-3 h-3" />
             </a>
             <a
-              href="https://discord.gg/wolloofy"
+              href="https://discord.gg/CuQMZ2Nk"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-400 transition-colors flex items-center gap-1"
