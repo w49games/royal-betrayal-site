@@ -19,7 +19,7 @@ export function GiscusComments({
   repoId = 'R_kgDOTJ_xgA',
   category = '[ENTER CATEGORY NAME HERE]',
   categoryId = '[ENTER CATEGORY ID HERE]',
-  mapping = 'pathname',
+  mapping = 'title',
   strict = '0',
   reactionsEnabled = '1',
   emitMetadata = '0',
@@ -29,6 +29,7 @@ export function GiscusComments({
 }: GiscusCommentsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -37,7 +38,12 @@ export function GiscusComments({
       if (event.origin !== 'https://giscus.app') return;
       if (event.data?.giscus?.discussion) {
         setIsLoaded(true);
+        setHasError(false);
       }
+    };
+
+    const handleError = () => {
+      setHasError(true);
     };
 
     window.addEventListener('message', handleMessage);
@@ -57,10 +63,18 @@ export function GiscusComments({
     script.setAttribute('data-lang', lang);
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
+    script.onerror = handleError;
 
     containerRef.current.appendChild(script);
 
+    const timeoutId = setTimeout(() => {
+      if (!isLoaded && !hasError) {
+        setHasError(true);
+      }
+    }, 10000);
+
     return () => {
+      clearTimeout(timeoutId);
       window.removeEventListener('message', handleMessage);
       if (containerRef.current) {
         const giscusIframe = containerRef.current.querySelector('iframe.giscus-frame');
@@ -70,7 +84,17 @@ export function GiscusComments({
         script.remove();
       }
     };
-  }, [repo, repoId, category, categoryId, mapping, strict, reactionsEnabled, emitMetadata, inputPosition, theme, lang]);
+  }, [repo, repoId, category, categoryId, mapping, strict, reactionsEnabled, emitMetadata, inputPosition, theme, lang, isLoaded, hasError]);
+
+  if (hasError) {
+    return (
+      <div className="max-w-4xl mx-auto p-6 rounded-xl bg-dark-400/30 backdrop-blur-sm border border-dark-50/10">
+        <p className="text-secondary-400 text-sm text-center font-sans">
+          Comments could not be loaded. Please ensure GitHub Discussions is enabled for the repository.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div
