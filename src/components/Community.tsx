@@ -99,3 +99,4 @@ export function Community() {
     </section>
   );
 }
+<GiscusComments />
