@@ -17,8 +17,8 @@ interface GiscusCommentsProps {
 export function GiscusComments({
   repo = 'w49games/royal-betrayal-site',
   repoId = 'R_kgDOTJ_xgA',
-  category = '[ENTER CATEGORY NAME HERE]',
-  categoryId = '[ENTER CATEGORY ID HERE]',
+  category = 'General',
+  categoryId = 'DIC_kwDOTJ_xgM4DAP1T',
   mapping = 'title',
   strict = '0',
   reactionsEnabled = '1',
