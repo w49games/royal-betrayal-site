@@ -62,7 +62,7 @@ export function Community() {
                 Chat with players, find groups, and get the latest updates
               </p>
               <motion.a
-                href="https://discord.gg/wolloofy"
+                href="https://discord.gg/CuQMZ2Nk"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(242, 117, 15, 0.4)' }}
