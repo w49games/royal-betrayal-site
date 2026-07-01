@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { MessageCircle, ExternalLink, Users } from 'lucide-react';
+import { GiscusComments } from './GiscusComments';
 
 export function Community() {
   return (
@@ -37,18 +38,8 @@ export function Community() {
                 </h3>
               </div>
 
-              <div className="flex-1 flex items-center justify-center p-8">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-500/10 border border-primary-500/20 flex items-center justify-center">
-                    <MessageCircle className="w-8 h-8 text-primary-400" />
-                  </div>
-                  <p className="text-secondary-400 font-sans text-sm mb-2">
-                    Comments Section
-                  </p>
-                  <p className="text-secondary-500 text-xs">
-                    (Giscus/Disqus injection here)
-                  </p>
-                </div>
+              <div className="flex-1 p-4">
+                <GiscusComments />
               </div>
             </div>
           </motion.div>
