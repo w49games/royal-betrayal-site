@@ -32,7 +32,7 @@ export function Footer() {
             className="flex items-center gap-6 text-sm font-sans text-secondary-400"
           >
             <a
-              href="https://www.tabletopia.com"
+              href="https://tabletopia.com/games/royalbetrayal-6d8zi1/play-now"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-400 transition-colors flex items-center gap-1"
