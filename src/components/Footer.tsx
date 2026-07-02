@@ -15,7 +15,7 @@ export function Footer() {
             className="flex items-center gap-3"
           >
             <img
-              src="Logo Royal Betrayal RGB.png"
+              src="Logo Royal Betrayal RGB.webp"
               alt="Royal Betrayal Logo"
               className="h-10 w-auto"
             />
