@@ -65,7 +65,7 @@ export function Navigation() {
               className="flex items-center gap-3 group"
             >
               <img
-                src="Logo Royal Betrayal RGB.png"
+                src="Logo Royal Betrayal RGB.webp"
                 alt="Royal Betrayal Logo"
                 className="h-10 w-auto"
               />
