@@ -65,7 +65,7 @@ export function HowToPlay() {
 
             <div className="relative aspect-video bg-dark-950">
               <iframe
-                src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}`}
+                src={`https://youtu.be/Hfm94aHAbYQ?si=7IMYrSGlH433vPwl`}
                 title="Royal Betrayal: How to Play"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
