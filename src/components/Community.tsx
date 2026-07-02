@@ -73,30 +73,9 @@ export function Community() {
                 <ExternalLink className="w-4 h-4" />
               </motion.a>
             </div>
-
-            <div className="feature-card text-center">
-              <h3 className="font-display text-sm font-semibold text-secondary-200 mb-3">
-                Community Stats
-              </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-secondary-400 font-sans">Active Players</span>
-                  <span className="text-primary-400 font-sans font-semibold">1,200+</span>
-                </div>
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-secondary-400 font-sans">Discord Members</span>
-                  <span className="text-primary-400 font-sans font-semibold">850+</span>
-                </div>
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-secondary-400 font-sans">Tabletopia Plays</span>
-                  <span className="text-primary-400 font-sans font-semibold">2,500+</span>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
     </section>
   );
 }
-<GiscusComments />

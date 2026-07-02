@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, ExternalLink } from 'lucide-react';
+import { Heart, ExternalLink, Instagram } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -47,6 +47,17 @@ export function Footer() {
               className="hover:text-primary-400 transition-colors flex items-center gap-1"
             >
               Discord
+              <ExternalLink className="w-3 h-3" />
+            </a>
+            <a
+              href="https://www.instagram.com/royalbetrayal.attackofwolloofy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-400 transition-colors flex items-center gap-1"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-4 h-4" />
+              Instagram
               <ExternalLink className="w-3 h-3" />
             </a>
           </motion.div>

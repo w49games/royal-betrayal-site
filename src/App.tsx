@@ -1,6 +1,7 @@
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Rulebook } from './components/Rulebook';
+import { HowToPlay } from './components/HowToPlay';
 import { CardGallery } from './components/CardGallery';
 import { PlayOnline } from './components/PlayOnline';
 import { Devlog } from './components/Devlog';
@@ -14,6 +15,7 @@ function App() {
       <main>
         <Hero />
         <Rulebook />
+        <HowToPlay />
         <CardGallery />
         <PlayOnline />
         <Devlog />

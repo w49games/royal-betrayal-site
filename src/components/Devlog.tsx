@@ -1,12 +1,19 @@
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, BookOpen, Users, Zap } from 'lucide-react';
 
+// ============================================================
+//  DEVLOG ENTRIES — edit these freely to update the devlog.
+//  Each entry controls a card on the homepage. The `url` field
+//  is where the "Read More" button links to (full article).
+// ============================================================
 const posts = [
   {
     id: 1,
     title: 'Designing the Cooperative Mechanics',
     date: 'June 2026',
-    excerpt: 'How we balanced cooperation and betrayal to create tension without breaking player trust. Discover the design philosophy behind the unique semi-coop experience.',
+    excerpt:
+      'How we balanced cooperation and betrayal to create tension without breaking player trust. Discover the design philosophy behind the unique semi-coop experience.',
+    url: 'https://w49games.itch.io/royal-betrayal/devlog/designing-the-cooperative-mechanics',
     icon: Users,
     tag: 'Game Design',
   },
@@ -14,7 +21,9 @@ const posts = [
     id: 2,
     title: 'Tabletopia Playtest Results',
     date: 'May 2026',
-    excerpt: 'Our first round of digital playtests revealed surprising player strategies and unexpected emergent gameplay. Here\'s what we learned from 200+ sessions.',
+    excerpt:
+      "Our first round of digital playtests revealed surprising player strategies and unexpected emergent gameplay. Here's what we learned from 200+ sessions.",
+    url: 'https://w49games.itch.io/royal-betrayal/devlog/tabletopia-playtest-results',
     icon: Zap,
     tag: 'Playtesting',
   },
@@ -22,7 +31,9 @@ const posts = [
     id: 3,
     title: 'Art Direction: Dark Fantasy Aesthetics',
     date: 'April 2026',
-    excerpt: 'From sketches to final cards: our journey creating a visual identity that captures dread, mystery, and the looming presence of Wolloofy.',
+    excerpt:
+      'From sketches to final cards: our journey creating a visual identity that captures dread, mystery, and the looming presence of Wolloofy.',
+    url: 'https://w49games.itch.io/royal-betrayal/devlog/art-direction-dark-fantasy-aesthetics',
     icon: BookOpen,
     tag: 'Art & Visuals',
   },
@@ -82,7 +93,7 @@ export function Devlog() {
               key={post.id}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="group feature-card cursor-pointer"
+              className="group feature-card flex flex-col"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500/20 to-accent-500/10 flex items-center justify-center border border-primary-500/20">
@@ -106,10 +117,17 @@ export function Devlog() {
                 {post.excerpt}
               </p>
 
-              <div className="flex items-center gap-2 text-primary-400 font-sans text-sm font-medium group-hover:gap-3 transition-all">
+              <motion.a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="mt-auto inline-flex items-center gap-2 text-primary-400 font-sans text-sm font-medium hover:gap-3 transition-all w-fit"
+              >
                 <span>Read More</span>
                 <ArrowRight className="w-4 h-4" />
-              </div>
+              </motion.a>
             </motion.article>
           ))}
         </motion.div>

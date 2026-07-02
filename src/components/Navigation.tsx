@@ -5,6 +5,7 @@ import { Menu, X, Crown } from 'lucide-react';
 const navLinks = [
   { id: 'hero', label: 'Home' },
   { id: 'rulebook', label: 'Rulebook' },
+  { id: 'how-to-play', label: 'How to Play' },
   { id: 'gallery', label: 'Cards' },
   { id: 'play', label: 'Play Online' },
   { id: 'devlog', label: 'Devlog' },
