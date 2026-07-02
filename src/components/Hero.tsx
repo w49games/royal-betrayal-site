@@ -29,7 +29,7 @@ export function Hero() {
             className="mb-6"
           >
             <img
-              src="Logo Royal Betrayal RGB.png"
+              src="Logo Royal Betrayal RGB.webp"
               alt="Royal Betrayal Logo"
               className="h-40 w-auto mx-auto drop-shadow-lg"
             />
