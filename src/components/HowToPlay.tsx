@@ -65,7 +65,7 @@ export function HowToPlay() {
 
             <div className="relative aspect-video bg-dark-950">
               <iframe
-                src={`https://www.youtube.com/watch?v=Hfm94aHAbYQ`}
+                src={`https://www.youtube.com/embed/Hfm94aHAbYQ?si=JJSIxRT28nO1XnWw`}
                 title="Royal Betrayal: How to Play"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -79,7 +79,7 @@ export function HowToPlay() {
                 setup, turn structure, combat, hidden factions, and the dreaded Despair Mode.
               </p>
               <motion.a
-                href={`https://www.youtube.com/watch?v=Hfm94aHAbYQ`}
+                href={`https://www.youtube.com/embed/Hfm94aHAbYQ?si=JJSIxRT28nO1XnWw`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
