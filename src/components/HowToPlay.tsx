@@ -79,7 +79,7 @@ export function HowToPlay() {
                 setup, turn structure, combat, hidden factions, and the dreaded Despair Mode.
               </p>
               <motion.a
-                href={`https://www.youtube.com/watch?v=${YOUTUBE_VIDEO_ID}`}
+                href={`https://youtu.be/Hfm94aHAbYQ?si=7IMYrSGlH433vPwl`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
