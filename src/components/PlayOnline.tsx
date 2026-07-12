@@ -104,11 +104,15 @@ export function PlayOnline() {
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                 className="relative group"
               >
-                <div className="rounded-xl overflow-hidden bg-dark-400 border border-dark-50/10 shadow-2xl transition-all duration-300 group-hover:border-primary-500/30 group-hover:shadow-glow">
-                  <img
-                    src={screenshot.src}
-                    alt={screenshot.alt}
-                    className="w-full aspect-video object-cover"
+                <div
+                  className="rounded-xl overflow-hidden bg-dark-400 border border-dark-50/10 shadow-2xl transition-all duration-300 group-hover:border-primary-500/30 group-hover:shadow-glow"
+                  onContextMenu={(e) => e.preventDefault()}
+                >
+                  <div
+                    className="prevent-download w-full aspect-video bg-cover bg-center"
+                    style={{ backgroundImage: `url(/${screenshot.src})` }}
+                    role="img"
+                    aria-label={screenshot.alt}
                   />
                 </div>
               </motion.div>

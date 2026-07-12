@@ -30,16 +30,13 @@ function FlipCard({ card }: FlipCardProps) {
         <div
           className="absolute inset-0 rounded-xl overflow-hidden bg-dark-400 border border-dark-50/10 shadow-lg group-hover:shadow-glow group-hover:border-primary-500/30 transition-all"
           style={{ backfaceVisibility: 'hidden' }}
+          onContextMenu={(e) => e.preventDefault()}
         >
-          <img
-            src={`/${card.frontImage}`}
-            alt={card.name}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              target.nextElementSibling?.classList.remove('hidden');
-            }}
+          <div
+            className="prevent-download w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(/${card.frontImage})` }}
+            role="img"
+            aria-label={card.name}
           />
           <div className="hidden absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent flex items-center justify-center">
             <span className="text-secondary-500 font-display text-sm text-center px-2">
@@ -51,16 +48,13 @@ function FlipCard({ card }: FlipCardProps) {
         <div
           className="absolute inset-0 rounded-xl overflow-hidden bg-dark-400 border border-primary-500/30 shadow-glow"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+          onContextMenu={(e) => e.preventDefault()}
         >
-          <img
-            src={`/${backImage}`}
-            alt="Card back"
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              target.nextElementSibling?.classList.remove('hidden');
-            }}
+          <div
+            className="prevent-download w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(/${backImage})` }}
+            role="img"
+            aria-label="Card back"
           />
           <div className="hidden absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent flex items-center justify-center">
             <span className="text-secondary-500 font-display text-sm text-center px-2">

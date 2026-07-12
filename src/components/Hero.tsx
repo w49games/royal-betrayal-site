@@ -31,7 +31,8 @@ export function Hero() {
             <img
               src="Logo Royal Betrayal RGB.webp"
               alt="Royal Betrayal Logo"
-              className="h-40 w-auto mx-auto drop-shadow-lg"
+              className="prevent-download h-40 w-auto mx-auto drop-shadow-lg"
+              onContextMenu={(e) => e.preventDefault()}
             />
           </motion.div>
 

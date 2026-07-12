@@ -104,6 +104,15 @@
 }
 
 @layer utilities {
+  .prevent-download {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    pointer-events: none;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
