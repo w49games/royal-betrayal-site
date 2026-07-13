@@ -11,7 +11,7 @@ const SITE_URL = 'https://royalbetrayal.com';
 const DEFAULT_IMAGE = `${SITE_URL}/Tabletopiaphoto.webp`;
 
 function setMeta(attr: 'name' | 'property', key: string, content: string) {
-  let element = document.head.querySelector<HTMLMetaElement>(`${attr}="${key}"`);
+  let element = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
   if (!element) {
     element = document.createElement('meta');
     element.setAttribute(attr, key);
