@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Download, Hand, Eye, Zap } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 const features = [
   {
@@ -42,6 +43,12 @@ const itemVariants = {
 };
 
 export function Rulebook() {
+  useSEO({
+    title: 'Rulebook & Mechanics',
+    description: 'Master the core mechanics of Royal Betrayal: Attack of Wolloofy. Learn about Hand = Life, hidden factions, and Total Despair Mode. Download the full rulebook PDF.',
+    keywords: 'Royal Betrayal rulebook, game mechanics, Hand = Life, hidden factions, Total Despair Mode, board game rules, how to play',
+  });
+
   return (
     <section id="rulebook" className="relative py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-600/30 to-dark-500" />

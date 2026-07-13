@@ -16,7 +16,7 @@ export function Footer() {
           >
             <img
               src="Logo Royal Betrayal RGB.webp"
-              alt="Royal Betrayal Logo"
+              alt="Royal Betrayal: Attack of Wolloofy logo"
               className="prevent-download h-10 w-auto"
               onContextMenu={(e) => e.preventDefault()}
             />

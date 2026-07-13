@@ -66,7 +66,7 @@ export function Navigation() {
             >
               <img
                 src="Logo Royal Betrayal RGB.webp"
-                alt="Royal Betrayal Logo"
+                alt="Royal Betrayal: Attack of Wolloofy logo"
                 className="h-10 w-auto"
               />
               <span className="font-boogaloo text-xl md:text-2xl font-semibold text-secondary-100 group-hover:text-primary-400 transition-colors">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Play, ExternalLink, Monitor, Users, Zap } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 const features = [
   { icon: Monitor, label: 'Digital Board' },
@@ -13,6 +14,13 @@ const screenshots = [
 ];
 
 export function PlayOnline() {
+  useSEO({
+    title: 'Play on Tabletopia',
+    description: 'Play Royal Betrayal: Attack of Wolloofy online on Tabletopia. No download required. Full 4-6 player support in your browser or Steam.',
+    keywords: 'Royal Betrayal Tabletopia, play online, digital board game, browser game, online multiplayer, no download',
+    image: 'https://royalbetrayal.com/Tabletopiaphoto.webp',
+  });
+
   return (
     <section id="play" className="relative py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-600/30 to-dark-500" />

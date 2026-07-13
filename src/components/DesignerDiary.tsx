@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Feather, Sparkles, Swords, Shield, Skull, Palette, Package, Heart } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 const sections = [
   {
@@ -127,6 +128,12 @@ const sections = [
 ];
 
 export function DesignerDiary() {
+  useSEO({
+    title: 'Designer Diary',
+    description: 'The complete designer diary for Royal Betrayal: Attack of Wolloofy by lead designer Oscar.S. The obsessive journey from initial spark to Gamefound launch, including mechanics design, anti-AI art stance, and indie publishing realities.',
+    keywords: 'Royal Betrayal designer diary, game design, Oscar.S, W49 Games, board game development, indie publishing, KOUKI SAITOU, Gamefound',
+  });
+
   return (
     <section id="designer-diary" className="relative py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-600/40 to-dark-500" />

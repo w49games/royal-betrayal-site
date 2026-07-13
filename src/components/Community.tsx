@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
 import { MessageCircle, ExternalLink, Users } from 'lucide-react';
 import { GiscusComments } from './GiscusComments';
+import { useSEO } from '../hooks/useSEO';
 
 export function Community() {
+  useSEO({
+    title: 'Community',
+    description: 'Join the Royal Betrayal community. Share strategies, discuss the game, and connect with other players on Discord and GitHub.',
+    keywords: 'Royal Betrayal community, board game community, Discord, discussion, strategies, player forum',
+  });
+
   return (
     <section id="community" className="relative py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-600/40 to-dark-500" />

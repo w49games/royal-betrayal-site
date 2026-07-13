@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Play, Youtube, ExternalLink } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 const YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ';
 
@@ -26,6 +27,12 @@ const itemVariants = {
 };
 
 export function HowToPlay() {
+  useSEO({
+    title: 'How to Play',
+    description: 'Watch the full gameplay walkthrough video for Royal Betrayal: Attack of Wolloofy. Learn setup, turn structure, combat, hidden factions, and Despair Mode.',
+    keywords: 'Royal Betrayal how to play, gameplay walkthrough, tutorial video, board game tutorial, learn to play',
+  });
+
   return (
     <section id="how-to-play" className="relative py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-600/30 to-dark-500" />

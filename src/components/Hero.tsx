@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Play, Users, Clock, Shield, Swords, Rocket, Skull } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 const badges = [
   { icon: Users, label: '4-6 Players' },
@@ -8,6 +9,12 @@ const badges = [
 ];
 
 export function Hero() {
+  useSEO({
+    title: 'Royal Betrayal: Attack of Wolloofy',
+    description: 'A semi-cooperative survival and social deduction board game for 4-6 players. The Bad Overlord Wolloofy is awake and hangry. Protect the Prince or prepare to survive the Chaos!',
+    keywords: 'Royal Betrayal, Attack of Wolloofy, board game, semi-cooperative, social deduction, hidden roles, card game, boss battler, party game, indie board game',
+  });
+
   return (
     <section
       id="hero"

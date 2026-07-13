@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cards, filterCategories, getBackImage, type Card } from '../data/cards';
+import { useSEO } from '../hooks/useSEO';
 
 interface FlipCardProps {
   card: Card;
@@ -36,7 +37,7 @@ function FlipCard({ card }: FlipCardProps) {
             className="prevent-download w-full h-full bg-cover bg-center"
             style={{ backgroundImage: `url("/${card.frontImage}")` }}
             role="img"
-            aria-label={card.name}
+            aria-label={`${card.type} card: ${card.name} from Royal Betrayal: Attack of Wolloofy`}
           />
           <div className="hidden absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent flex items-center justify-center">
             <span className="text-secondary-500 font-display text-sm text-center px-2">
@@ -54,11 +55,11 @@ function FlipCard({ card }: FlipCardProps) {
             className="prevent-download w-full h-full bg-cover bg-center"
             style={{ backgroundImage: `url("/${backImage}")` }}
             role="img"
-            aria-label="Card back"
+            aria-label={`${card.type} card back design from Royal Betrayal: Attack of Wolloofy`}
           />
           <div className="hidden absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent flex items-center justify-center">
             <span className="text-secondary-500 font-display text-sm text-center px-2">
-              Card Back
+              {card.type} Card Back
             </span>
           </div>
         </div>
@@ -78,6 +79,12 @@ const containerVariants = {
 };
 
 export function CardGallery() {
+  useSEO({
+    title: 'Card Gallery',
+    description: 'Explore all 52 cards in Royal Betrayal: Attack of Wolloofy. Browse Destiny, Story, Mutation, and Action cards. Click to flip and reveal the card backs.',
+    keywords: 'Royal Betrayal cards, card gallery, Destiny cards, Story cards, Mutation cards, Action cards, board game cards',
+  });
+
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
   const filteredCards = activeFilter === 'All'
