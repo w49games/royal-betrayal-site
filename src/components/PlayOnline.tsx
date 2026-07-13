@@ -110,7 +110,7 @@ export function PlayOnline() {
                 >
                   <div
                     className="prevent-download w-full aspect-video bg-cover bg-center"
-                    style={{ backgroundImage: `url(/${screenshot.src})` }}
+                    style={{ backgroundImage: `url("/${screenshot.src}")` }}
                     role="img"
                     aria-label={screenshot.alt}
                   />

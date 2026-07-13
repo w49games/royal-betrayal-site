@@ -111,6 +111,9 @@
     -webkit-user-drag: none;
     -webkit-touch-callout: none;
     pointer-events: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .text-balance {

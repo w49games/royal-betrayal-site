@@ -34,7 +34,7 @@ function FlipCard({ card }: FlipCardProps) {
         >
           <div
             className="prevent-download w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(/${card.frontImage})` }}
+            style={{ backgroundImage: `url("/${card.frontImage}")` }}
             role="img"
             aria-label={card.name}
           />
@@ -52,7 +52,7 @@ function FlipCard({ card }: FlipCardProps) {
         >
           <div
             className="prevent-download w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(/${backImage})` }}
+            style={{ backgroundImage: `url("/${backImage}")` }}
             role="img"
             aria-label="Card back"
           />
