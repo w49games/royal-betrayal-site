@@ -8,7 +8,7 @@ const navLinks = [
   { id: 'how-to-play', label: 'How to Play' },
   { id: 'gallery', label: 'Cards' },
   { id: 'play', label: 'Play Online' },
-  { id: 'devlog', label: 'Devlog' },
+  { id: 'designer-diary', label: 'Designer Diary' },
   { id: 'community', label: 'Community' },
 ];
 
