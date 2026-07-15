@@ -1,0 +1,17 @@
+{
+  "name": "Royal Betrayal",
+  "short_name": "Royal Betrayal",
+  "description": "A semi-cooperative survival and social deduction board game for 4-6 players. Defeat the Bad Overlord Wolloofy, protect the Prince, and beware of hidden Traitors.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f16",
+  "theme_color": "#0f0f16",
+  "icons": [
+    {
+      "src": "/Logo Royal Betrayal RGB.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
