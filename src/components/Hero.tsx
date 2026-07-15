@@ -1,6 +1,8 @@
+import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Users, Clock, Shield, Swords, Rocket, Skull } from 'lucide-react';
+import { Play, Users, Clock, Shield, Swords, Rocket, Skull, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
+import { useMailerLiteSubscribe } from '../hooks/useMailerLiteSubscribe';
 
 const badges = [
   { icon: Users, label: '4-6 Players' },
@@ -125,6 +127,15 @@ export function Hero() {
           </motion.div>
 
           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="mt-8 w-full max-w-md mx-auto"
+          >
+            <HeroSubscribeForm />
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 1.2 }}
@@ -156,5 +167,67 @@ export function Hero() {
         </div>
       </motion.div>
     </section>
+  );
+}
+
+function HeroSubscribeForm() {
+  const [email, setEmail] = useState('');
+  const { status, message, subscribe, scheduleReset } = useMailerLiteSubscribe();
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    await subscribe(email);
+    if (status !== 'error') {
+      setEmail('');
+      scheduleReset(5000);
+    }
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit} className="flex items-center gap-2" noValidate>
+        <input
+          type="email"
+          name="fields[email]"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Get launch updates"
+          disabled={status === 'loading'}
+          required
+          className="flex-1 px-4 py-2.5 bg-dark-400/60 backdrop-blur-sm border border-dark-50/20 rounded-lg text-secondary-100 placeholder:text-secondary-500 font-sans text-sm focus:outline-none focus:border-primary-500/60 focus:ring-2 focus:ring-primary-500/20 transition-all duration-300 disabled:opacity-50"
+        />
+        <motion.button
+          type="submit"
+          disabled={status === 'loading'}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="px-4 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 text-dark-950 font-sans font-semibold text-sm rounded-lg shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center gap-1.5 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed"
+        >
+          {status === 'loading' ? (
+            <Loader2 className="w-4 h-4 animate-spin" />
+          ) : (
+            <>
+              <Send className="w-4 h-4" />
+              <span className="hidden sm:inline">Notify Me</span>
+            </>
+          )}
+        </motion.button>
+      </form>
+
+      <div className="h-5 mt-1.5">
+        {status === 'success' && (
+          <div className="flex items-center justify-center gap-1.5 text-success-400">
+            <CheckCircle2 className="w-3.5 h-3.5" />
+            <span className="font-sans text-xs">{message}</span>
+          </div>
+        )}
+        {status === 'error' && (
+          <div className="flex items-center justify-center gap-1.5 text-error-400">
+            <AlertCircle className="w-3.5 h-3.5" />
+            <span className="font-sans text-xs">{message}</span>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

@@ -6,6 +6,7 @@ import { CardGallery } from './components/CardGallery';
 import { PlayOnline } from './components/PlayOnline';
 import { DesignerDiary } from './components/DesignerDiary';
 import { Community } from './components/Community';
+import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <DesignerDiary />
         <Community />
       </main>
+      <Newsletter />
       <Footer />
     </div>
   );
