@@ -3,7 +3,7 @@ import { useState, useCallback, useRef } from 'react';
 // MailerLite embedded form endpoint. Replace FORM_ID with the ID from your
 // MailerLite embedded form's <form action="..."> URL.
 // e.g. action="https://static.mailerlite.com/webforms/submit/abc123" -> FORM_ID = "abc123"
-const MAILERLITE_FORM_ID = 'FORM_ID';
+const MAILERLITE_FORM_ID = '6tS57Y';
 const MAILERLITE_ENDPOINT = `https://static.mailerlite.com/webforms/submit/${MAILERLITE_FORM_ID}`;
 
 export type SubscribeStatus = 'idle' | 'loading' | 'success' | 'error';
