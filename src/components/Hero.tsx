@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Users, Clock, Shield, Swords, Bell, Skull, Send, CheckCircle2 } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mojgjkva';
 const HERO_SUCCESS_MESSAGE = 'Thanks for joining! We will notify you when the campaign goes live.';
 
 const badges = [
@@ -171,11 +172,28 @@ export function Hero() {
 
 function HeroSubscribeForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    try {
+      await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+      setIsSubmitted(true);
+    } catch {
+      setIsSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div>
-      <iframe name="hidden_mailerlite_iframe_hero" id="hidden_mailerlite_iframe_hero" style={{ display: 'none' }}></iframe>
-
       <AnimatePresence mode="wait">
         {isSubmitted ? (
           <motion.div
@@ -193,33 +211,25 @@ function HeroSubscribeForm() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            action="https://static.mailerlite.com/webforms/submit/6tS57Y"
-            data-code="6tS57Y"
-            method="POST"
-            target="hidden_mailerlite_iframe_hero"
-            onSubmit={() => {
-              setTimeout(() => setIsSubmitted(true), 500);
-            }}
+            onSubmit={handleSubmit}
             className="flex items-center gap-2"
           >
-            <input type="hidden" name="ml-submit" value="1" />
-            <input type="hidden" name="anticsrf" value="true" />
-
             <input
               type="email"
-              name="fields[email]"
+              name="email"
               placeholder="Get launch updates"
               required
               className="flex-1 px-4 py-2.5 bg-dark-400/60 backdrop-blur-sm border border-dark-50/20 rounded-lg text-secondary-100 placeholder:text-secondary-500 font-sans text-sm focus:outline-none focus:border-primary-500/60 focus:ring-2 focus:ring-primary-500/20 transition-all duration-300"
             />
             <motion.button
               type="submit"
+              disabled={isSubmitting}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-4 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 text-dark-950 font-sans font-semibold text-sm rounded-lg shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center gap-1.5 whitespace-nowrap"
+              className="px-4 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 text-dark-950 font-sans font-semibold text-sm rounded-lg shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center gap-1.5 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <Send className="w-4 h-4" />
-              <span className="hidden sm:inline">Notify Me</span>
+              <span className="hidden sm:inline">{isSubmitting ? '...' : 'Notify Me'}</span>
             </motion.button>
           </motion.form>
         )}

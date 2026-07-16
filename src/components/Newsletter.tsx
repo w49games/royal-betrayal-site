@@ -1,11 +1,31 @@
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, CheckCircle2, Sparkles } from 'lucide-react';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mojgjkva';
 const SUCCESS_MESSAGE = 'Thanks for joining! We will notify you when the campaign goes live.';
 
 export function Newsletter() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    try {
+      await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+      setIsSubmitted(true);
+    } catch {
+      setIsSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section
@@ -15,8 +35,6 @@ export function Newsletter() {
       <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-600/40 to-dark-500" />
       <div className="absolute inset-0 atmospheric-bg opacity-60" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary-500/5 rounded-full blur-3xl" />
-
-      <iframe name="hidden_mailerlite_iframe" id="hidden_mailerlite_iframe" style={{ display: 'none' }}></iframe>
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
@@ -68,22 +86,13 @@ export function Newsletter() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              action="https://static.mailerlite.com/webforms/submit/6tS57Y"
-              data-code="6tS57Y"
-              method="POST"
-              target="hidden_mailerlite_iframe"
-              onSubmit={() => {
-                setTimeout(() => setIsSubmitted(true), 500);
-              }}
+              onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto"
             >
-              <input type="hidden" name="ml-submit" value="1" />
-              <input type="hidden" name="anticsrf" value="true" />
-
               <div className="relative flex-1 w-full">
                 <input
                   type="email"
-                  name="fields[email]"
+                  name="email"
                   placeholder="Enter your email"
                   required
                   className="w-full px-5 py-4 bg-dark-400/60 backdrop-blur-sm border border-dark-50/20 rounded-lg text-secondary-100 placeholder:text-secondary-500 font-sans text-base focus:outline-none focus:border-primary-500/60 focus:ring-2 focus:ring-primary-500/20 transition-all duration-300"
@@ -92,12 +101,13 @@ export function Newsletter() {
 
               <motion.button
                 type="submit"
+                disabled={isSubmitting}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="px-7 py-4 bg-gradient-to-r from-primary-600 to-primary-500 text-dark-950 font-sans font-bold text-base rounded-lg shadow-glow hover:shadow-glow-lg hover:from-primary-500 hover:to-primary-400 transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
+                className="px-7 py-4 bg-gradient-to-r from-primary-600 to-primary-500 text-dark-950 font-sans font-bold text-base rounded-lg shadow-glow hover:shadow-glow-lg hover:from-primary-500 hover:to-primary-400 transition-all duration-300 flex items-center gap-2 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <Sparkles className="w-5 h-5" />
-                Notify Me on Launch
+                {isSubmitting ? 'Sending...' : 'Notify Me on Launch'}
               </motion.button>
             </motion.form>
           )}
