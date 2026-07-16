@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Users, Clock, Shield, Swords, Rocket, Skull, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Play, Users, Clock, Shield, Swords, Bell, Skull, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 
 const MAILERLITE_ACTION = 'https://static.mailerlite.com/webforms/submit/6tS57Y';
@@ -104,17 +104,15 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <motion.a
-              href="https://www.gamefound.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05, boxShadow: '0 0 50px rgba(242, 117, 15, 0.6)' }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-primary-500 text-dark-950 font-sans font-bold text-lg rounded-lg shadow-glow-lg transition-all duration-300 flex items-center gap-2"
+              className="px-8 py-4 bg-primary-500 text-dark-950 font-sans font-bold text-lg rounded-lg shadow-glow-lg transition-all duration-300 flex items-center gap-2 cursor-pointer"
             >
-              <Rocket className="w-5 h-5" />
-              Launch on Gamefound
-            </motion.a>
+              <Bell className="w-5 h-5" />
+              Join the Waitlist
+            </motion.button>
 
             <motion.a
               href="https://tabletopia.com/games/royalbetrayal-6d8zi1/play-now"
