@@ -176,8 +176,8 @@ function HeroSubscribeForm() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    await subscribe(email);
-    if (status !== 'error') {
+    const result = await subscribe(email);
+    if (result !== 'error') {
       setEmail('');
       scheduleReset(5000);
     }
