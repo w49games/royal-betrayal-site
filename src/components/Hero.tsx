@@ -1,10 +1,8 @@
-import { useState, type FormEvent } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Users, Clock, Shield, Swords, Bell, Skull, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Play, Users, Clock, Shield, Swords, Bell, Skull, Send, CheckCircle2 } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 
-const MAILERLITE_ACTION = 'https://static.mailerlite.com/webforms/submit/6tS57Y';
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const HERO_SUCCESS_MESSAGE = 'Thanks for joining! We will notify you when the campaign goes live.';
 
 const badges = [
@@ -172,23 +170,11 @@ export function Hero() {
 }
 
 function HeroSubscribeForm() {
-  const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleSubmit = (e: FormEvent) => {
-    if (!email || !EMAIL_REGEX.test(email)) {
-      e.preventDefault();
-      setError('Please enter a valid email address.');
-      return;
-    }
-    setError('');
-    setIsSubmitted(true);
-  };
 
   return (
     <div>
-      <iframe name="hidden_mailerlite_iframe_hero" className="hidden" title="MailerLite submission frame" />
+      <iframe name="hidden_mailerlite_iframe_hero" id="hidden_mailerlite_iframe_hero" style={{ display: 'none' }}></iframe>
 
       <AnimatePresence mode="wait">
         {isSubmitted ? (
@@ -207,18 +193,21 @@ function HeroSubscribeForm() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            action={MAILERLITE_ACTION}
+            action="https://static.mailerlite.com/webforms/submit/6tS57Y"
+            data-code="6tS57Y"
             method="POST"
             target="hidden_mailerlite_iframe_hero"
-            onSubmit={handleSubmit}
+            onSubmit={() => {
+              setTimeout(() => setIsSubmitted(true), 500);
+            }}
             className="flex items-center gap-2"
-            noValidate
           >
+            <input type="hidden" name="ml-submit" value="1" />
+            <input type="hidden" name="anticsrf" value="true" />
+
             <input
               type="email"
               name="fields[email]"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               placeholder="Get launch updates"
               required
               className="flex-1 px-4 py-2.5 bg-dark-400/60 backdrop-blur-sm border border-dark-50/20 rounded-lg text-secondary-100 placeholder:text-secondary-500 font-sans text-sm focus:outline-none focus:border-primary-500/60 focus:ring-2 focus:ring-primary-500/20 transition-all duration-300"
@@ -232,19 +221,9 @@ function HeroSubscribeForm() {
               <Send className="w-4 h-4" />
               <span className="hidden sm:inline">Notify Me</span>
             </motion.button>
-            <input type="hidden" name="ml-submit" value="1" />
           </motion.form>
         )}
       </AnimatePresence>
-
-      <div className="h-5 mt-1.5">
-        {error && !isSubmitted && (
-          <div className="flex items-center justify-center gap-1.5 text-error-400">
-            <AlertCircle className="w-3.5 h-3.5" />
-            <span className="font-sans text-xs">{error}</span>
-          </div>
-        )}
-      </div>
     </div>
   );
 }
