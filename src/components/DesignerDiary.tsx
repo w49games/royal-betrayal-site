@@ -98,7 +98,7 @@ const sections = [
   },
   {
     icon: Palette,
-    title: 'Human Souls Only & The Legendary ██████████',
+    title: 'Human Souls Only & The Legendary ██████████ [REDACTED - Artist to be revealed in September]',
     body: [
       'When it came time to find the right art style, we made a firm decision: we explicitly stated in all our artist contracts that the use of AI-generated art is strictly forbidden. We wanted real human soul in our game. We found our lead illustrator, Syakir from Indonesia, whose illustrations perfectly capture that classic RPG video game feel for our main cards.',
       'But as a massive TCG collector, I wanted to push the immersion further. I wanted players to hold Artcards that make them feel fully immersed in the brutal world of Royal Betrayal. So, I sent cold emails to various professional TCG artists.',
