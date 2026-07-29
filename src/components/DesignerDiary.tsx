@@ -98,11 +98,11 @@ const sections = [
   },
   {
     icon: Palette,
-    title: 'Human Souls Only & The Legendary KOUKI SAITOU',
+    title: 'Human Souls Only & The Legendary ██████████',
     body: [
       'When it came time to find the right art style, we made a firm decision: we explicitly stated in all our artist contracts that the use of AI-generated art is strictly forbidden. We wanted real human soul in our game. We found our lead illustrator, Syakir from Indonesia, whose illustrations perfectly capture that classic RPG video game feel for our main cards.',
       'But as a massive TCG collector, I wanted to push the immersion further. I wanted players to hold Artcards that make them feel fully immersed in the brutal world of Royal Betrayal. So, I sent cold emails to various professional TCG artists.',
-      'After multiple conversations, we are incredibly honored to announce that the legendary artist KOUKI SAITOU has joined our project! For his very first board game project, Saitou-sensei is crafting a breathtaking, cinematic scene. We made sure the core artwork explicitly depicts a Guard protecting the Prince—ensuring everyone instantly knows this is a heavily cooperative game, rather than a solo mission.',
+      'After multiple conversations, we are incredibly honored to announce that the legendary artist ██████████ has joined our project! For his very first board game project, Saitou-sensei is crafting a breathtaking, cinematic scene. We made sure the core artwork explicitly depicts a Guard protecting the Prince—ensuring everyone instantly knows this is a heavily cooperative game, rather than a solo mission.',
       'As for the rest of this masterpiece? We are keeping the chilling details and the true faces of the Traitors shrouded in mystery. You will have to get your hands on the First Edition to see the full, glorious picture for yourself.',
     ],
   },
@@ -120,7 +120,7 @@ const sections = [
     title: 'Building a Lasting IP & The First Edition Exclusives',
     body: [
       'Despite the stress and the steep learning curve, I wouldn\'t trade this experience for anything. My hope is simply that this campaign earns enough to cover our costs so I can continue this journey. I want to build Royal Betrayal into a lasting IP, and I have already started mapping out a two-player sequel!',
-      'But every franchise starts with a single step. That is why our Gamefound First Edition Set will be incredibly special. It will exclusively include the Limited Edition Artcards illustrated by KOUKI SAITOU. We want this box to hold immense collectible value for the early believers who back us when we are just starting out.',
+      'But every franchise starts with a single step. That is why our Gamefound First Edition Set will be incredibly special. It will exclusively include the Limited Edition Artcards illustrated by ██████████. We want this box to hold immense collectible value for the early believers who back us when we are just starting out.',
       'We are a small indie team pouring our hearts into this, and we rely entirely on the support of the community to bring Royal Betrayal to life.',
       'Thank you for reading, for playtesting, and for joining us on this crazy ride.',
     ],
@@ -131,7 +131,7 @@ export function DesignerDiary() {
   useSEO({
     title: 'Designer Diary',
     description: 'The complete designer diary for Royal Betrayal: Attack of Wolloofy by lead designer Oscar.S. The obsessive journey from initial spark to Gamefound launch, including mechanics design, anti-AI art stance, and indie publishing realities.',
-    keywords: 'Royal Betrayal designer diary, game design, Oscar.S, W49 Games, board game development, indie publishing, KOUKI SAITOU, Gamefound',
+    keywords: 'Royal Betrayal designer diary, game design, Oscar.S, W49 Games, board game development, indie publishing, ██████████, Gamefound',
   });
 
   return (
