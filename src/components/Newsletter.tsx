@@ -65,7 +65,7 @@ export function Newsletter() {
           className="text-secondary-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto font-body"
         >
           Enter your email to get notified the moment our Gamefound campaign launches.
-          Don't miss out on the First Edition exclusives and KOUKI SAITOU Artcards!
+          Don't miss out on the First Edition exclusive and Artcard!
         </motion.p>
 
         <AnimatePresence mode="wait">
