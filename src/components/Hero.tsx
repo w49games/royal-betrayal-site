@@ -93,7 +93,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="max-w-3xl mx-auto text-lg md:text-xl text-secondary-300 leading-relaxed mb-12 font-body"
           >
-            The Bad Overlord, Wolloofy, is awake and hangry. The Prince keeps the beast weak. Players must cooperate to protect the Prince, but beware—{' '}
+            The Bad Overlord, Wolloofy, is awake and hangry. The Prince keeps the beast weak. Players should cooperate to protect the Prince, but beware {' '}
             <span className="text-accent-400 font-semibold">Traitors are hiding among you</span>, and they want the Prince dead! Protect the Prince, or prepare to survive the Chaos!
           </motion.p>
 
