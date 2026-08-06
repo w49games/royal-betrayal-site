@@ -93,8 +93,9 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="max-w-3xl mx-auto text-lg md:text-xl text-secondary-300 leading-relaxed mb-12 font-body"
           >
-            The Bad Overlord, Wolloofy, is awake and hangry. The Prince keeps the beast weak. Players should cooperate to protect the Prince, but beware {' '}
-            <span className="text-accent-400 font-semibold">Traitors are hiding among you</span>, and they want the Prince dead! Protect the Prince, or prepare to survive the Chaos!
+            Wolloofy, the Bad Overlord, is awake and ravenous. Only the Prince's presence keeps the beast weakened. Should the Prince fall, the seal shatters, and Wolloofy will go completely BERSERK, unleashing absolute chaos on the board! Trust no one as  {' '}
+            <span className="text-accent-400 font-semibold">Traitors are lurking in the shadows, scheming to eliminate both the Prince and Wolloofy to claim the win.</span>Fortunately, the secret Guard stands ready with the King's Shield to absorb the damage. Protect the Prince, or face the wrath of an unstoppable monster! 
+
           </motion.p>
 
           <motion.div
