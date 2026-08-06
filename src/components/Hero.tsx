@@ -34,36 +34,20 @@ export function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, type: 'spring' }}
-            className="mb-6"
+            transition={{ duration: 0.9, type: 'spring' }}
+            className="mb-10 select-none pointer-events-none"
           >
             <img
-              src="Logo Royal Betrayal RGB.webp"
-              alt="Royal Betrayal Logo"
-              className="prevent-download h-40 w-auto mx-auto drop-shadow-lg"
+              src="/Game_Logo.png"
+              alt="Royal Betrayal: Attack of Wolloofy"
+              draggable={false}
               onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
+              className="prevent-download w-full max-w-2xl mx-auto drop-shadow-2xl select-none pointer-events-none"
             />
           </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-boogaloo text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-2 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 bg-clip-text text-transparent glow-text"
-          >
-            ROYAL BETRAYAL
-          </motion.h1>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary-200 mb-8"
-          >
-            Attack of Wolloofy
-          </motion.h2>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
