@@ -31,13 +31,13 @@ export function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-pulse-glow" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/5 rounded-full blur-3xl animate-pulse-glow delay-1000" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
+        <div className="flex flex-col items-center justify-center min-h-[70vh] text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, type: 'spring' }}
-            className="mb-10 select-none pointer-events-none"
+            className="mb-16 md:mb-20 select-none pointer-events-none"
           >
             <img
               src="/Game_Logo.png"
