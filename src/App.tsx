@@ -4,6 +4,7 @@ import { Rulebook } from './components/Rulebook';
 import { HowToPlay } from './components/HowToPlay';
 import { CardGallery } from './components/CardGallery';
 import { PlayOnline } from './components/PlayOnline';
+import { PrototypeGallery } from './components/PrototypeGallery';
 import { DesignerDiary } from './components/DesignerDiary';
 import { Community } from './components/Community';
 import { Newsletter } from './components/Newsletter';
@@ -19,6 +20,7 @@ function App() {
         <HowToPlay />
         <CardGallery />
         <PlayOnline />
+        <PrototypeGallery />
         <DesignerDiary />
         <Community />
       </main>
