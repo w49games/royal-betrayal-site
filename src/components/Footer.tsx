@@ -51,7 +51,7 @@ export function Footer() {
               <ExternalLink className="w-3 h-3" />
             </a>
             <a
-              href="https://www.instagram.com/royalbetrayal.attackofwolloofy"
+              href="https://www.instagram.com/w49games"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-400 transition-colors flex items-center gap-1"
