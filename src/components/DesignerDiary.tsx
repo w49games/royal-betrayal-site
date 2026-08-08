@@ -161,7 +161,7 @@ export function DesignerDiary() {
           <p className="font-body text-secondary-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto italic">
             Welcome to the comprehensive, unfiltered designer diary for Royal Betrayal: Attack of Wolloofy. I'm Oscar.S,
             the lead designer. As we gear up for our Gamefound launch, I want to pull back the curtain and share the
-            complete, obsessive journey of how this game came to life—from the initial spark and the grueling mechanics
+            complete, obsessive journey of how this game came to life from the initial spark and the grueling mechanics
             design, to our strict anti-AI art stance and the realities of indie publishing.
           </p>
 
