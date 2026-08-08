@@ -83,14 +83,14 @@ const sections = [
     ],
     bodyAfter: [
       'But here is where the game truly earns the name Royal Betrayal. You cannot even trust your fellow Traitors. We engineered a system where Traitors might be pursuing an "Ambition" victory. This means they only care about completing the secret condition printed on their personal Destiny Card, regardless of whether the Prince lives or dies!',
-      'For,example, if the Traitor faction is losing, a player holding the Dragonslayer destiny card can completely abandon the assassination plot. They can pretend to be a Loyalist, help the team survive, and steal a solo victory by landing the final blow on the Boss themselves. You have to constantly read the table and question the motives of everyone—even your fellow conspirators.',
+      'For example, if the Traitor faction is losing, a player holding the Dragonslayer destiny card can completely abandon the assassination plot. They can pretend to be a Loyalist, help the team survive, and steal a solo victory by landing the final blow on the Boss themselves. You have to constantly read the table and question the motives of everyone even your fellow conspirators.',
     ],
   },
   {
     icon: Skull,
     title: 'Total Despair: The Sudden Death Climax',
     body: [
-      'One of the biggest flaws in many survival games is the late-game stall—players turtle up, and the game drags. We needed a ruthless timer. The clock is always ticking; if the Story Deck runs out, or if the Traitors successfully assassinate the Prince, the game plunges into Total Despair Mode.',
+      'One of the biggest flaws in many survival games is the late-game stall,which players turtle up, and the game drags. We needed a ruthless timer. The clock is always ticking; if the Story Deck runs out, or if the Traitors successfully assassinate the Prince, the game plunges into Total Despair Mode.',
       'We engineered a frantic sudden death. The Overlord goes Berserk, dealing unblockable damage to everyone at the end of every round. Furthermore, Stagnation freezes the board, preventing anyone from equipping new items. It forces players to stop planning carefully and start swinging desperately.',
       'But my absolute favorite narrative design is what happens to the Guard. If the Prince dies, the Guard is forced into Public Shame, permanently flipping their Shield face-up and losing all its powers.',
       'However, they transform into the "Eternal Failed Loyalist" : an avenger who cannot win and cannot join the Traitors. Their ONLY goal is pure vengeance: hunting down and killing the remaining Traitors before the Berserk Boss wipes the entire table out. It transforms a calculating cold war into a bloody, glorious slasher movie where the Guard has nothing left to lose.',
