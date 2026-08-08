@@ -77,9 +77,9 @@ const sections = [
       'From a design perspective, we didn\'t just want a simple "Good vs. Evil" ending. We wanted paranoia. Depending on the choices made, the game branches into wildly different conclusions:',
     ],
     endings: [
-      { label: 'The Loyalist Victory', text: 'The Overlord dies, The Prince survives.' },
+      { label: 'The Loyalist Victory', text: 'Wolloofy dies, The Prince survives.' },
       { label: 'The Overlord Victory', text: 'Wolloofy devours everyone, reducing all players\' hands to zero.' },
-      { label: 'The Regicide Victory (Traitors)', text: 'The Overlord dies, and The Prince is successfully assassinated.' },
+      { label: 'The Regicide Victory (Traitors)', text: 'Wolloofy dies, and The Prince is successfully assassinated.' },
     ],
     bodyAfter: [
       'But here is where the game truly earns the name Royal Betrayal. You cannot even trust your fellow Traitors. We engineered a system where Traitors might be pursuing an "Ambition" victory. This means they only care about completing the secret condition printed on their personal Destiny Card, regardless of whether the Prince lives or dies!',
