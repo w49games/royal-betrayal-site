@@ -41,7 +41,7 @@ const sections = [
       },
       {
         title: 'The "Support" Bluff',
-        body: 'We wanted a mechanic that purely drives social deduction. Once per turn, you can pass a card face-down to another player, and then you draw a replacement. This is the ultimate tool for manipulation. As a Loyalist, you might be desperately passing a shield to a dying friend. But as a Traitor, I can pass you a completely useless card just to buy your absolute trust, setting you up for a lethal strike later.',
+        body: 'We wanted a mechanic that purely drives social deduction. Once per turn, you can pass a card face-down to another player, and then you draw a replacement. This is the ultimate tool for manipulation. As a Loyalist, you might be desperately passing a card to a dying friend. But as a Traitor, I can pass you a completely useless card just to buy your absolute trust, setting you up for a lethal strike later.',
       },
       {
         title: 'Brawling the Turtles (PvP)',
@@ -66,7 +66,7 @@ const sections = [
       },
       {
         title: 'The Mutating Boss',
-        body: 'To prevent the Boss fight from feeling like a static punching bag, we tied Wolloofy\'s HP to physical dice. Every time a die breaks, a permanent Mutation card is drawn. If Soul Siphon drops, suddenly every missed Unarmed attack actively heals the Boss! A strategy that worked perfectly on turn two will completely destroy your team on turn five.',
+        body: 'To prevent the Boss fight from feeling like a static punching bag, we tied Wolloofy\'s HP to physical dice. Every time a die breaks, a Mutation card is drawn. For instance, if Soul Siphon drops, suddenly every missed Unarmed attack actively heals the Boss! A strategy that worked perfectly on turn two will completely destroy your team on turn five.',
       },
     ],
   },
@@ -77,13 +77,13 @@ const sections = [
       'From a design perspective, we didn\'t just want a simple "Good vs. Evil" ending. We wanted paranoia. Depending on the choices made, the game branches into wildly different conclusions:',
     ],
     endings: [
-      { label: 'The Loyalist Victory', text: 'The Overlord dies, and The Prince survives to rule another day.' },
+      { label: 'The Loyalist Victory', text: 'The Overlord dies, The Prince survives.' },
       { label: 'The Overlord Victory', text: 'Wolloofy devours everyone, reducing all players\' hands to zero.' },
       { label: 'The Regicide Victory (Traitors)', text: 'The Overlord dies, and The Prince is successfully assassinated.' },
     ],
     bodyAfter: [
       'But here is where the game truly earns the name Royal Betrayal. You cannot even trust your fellow Traitors. We engineered a system where Traitors might be pursuing an "Ambition" victory. This means they only care about completing the secret condition printed on their personal Destiny Card, regardless of whether the Prince lives or dies!',
-      'If the Traitor faction is losing, a player holding the Dragonslayer destiny card can completely abandon the assassination plot. They can pretend to be a Loyalist, help the team survive, and steal a solo victory by landing the final blow on the Boss themselves. You have to constantly read the table and question the motives of everyone—even your fellow conspirators.',
+      'For,example, if the Traitor faction is losing, a player holding the Dragonslayer destiny card can completely abandon the assassination plot. They can pretend to be a Loyalist, help the team survive, and steal a solo victory by landing the final blow on the Boss themselves. You have to constantly read the table and question the motives of everyone—even your fellow conspirators.',
     ],
   },
   {
@@ -93,7 +93,7 @@ const sections = [
       'One of the biggest flaws in many survival games is the late-game stall—players turtle up, and the game drags. We needed a ruthless timer. The clock is always ticking; if the Story Deck runs out, or if the Traitors successfully assassinate the Prince, the game plunges into Total Despair Mode.',
       'We engineered a frantic sudden death. The Overlord goes Berserk, dealing unblockable damage to everyone at the end of every round. Furthermore, Stagnation freezes the board, preventing anyone from equipping new items. It forces players to stop planning carefully and start swinging desperately.',
       'But my absolute favorite narrative design is what happens to the Guard. If the Prince dies, the Guard is forced into Public Shame, permanently flipping their Shield face-up and losing all its powers.',
-      'However, they transform into the "Eternal Failed Loyalist"—an avenger who cannot win and cannot join the Traitors. Their ONLY goal is pure vengeance: hunting down and killing the remaining Traitors before the Berserk Boss wipes the entire table out. It transforms a calculating cold war into a bloody, glorious slasher movie where the Guard has nothing left to lose.',
+      'However, they transform into the "Eternal Failed Loyalist" : an avenger who cannot win and cannot join the Traitors. Their ONLY goal is pure vengeance: hunting down and killing the remaining Traitors before the Berserk Boss wipes the entire table out. It transforms a calculating cold war into a bloody, glorious slasher movie where the Guard has nothing left to lose.',
     ],
   },
   {
@@ -102,7 +102,7 @@ const sections = [
     body: [
       'When it came time to find the right art style, we made a firm decision: we explicitly stated in all our artist contracts that the use of AI-generated art is strictly forbidden. We wanted real human soul in our game. We found our lead illustrator, Syakir from Indonesia, whose illustrations perfectly capture that classic RPG video game feel for our main cards.',
       'But as a massive TCG collector, I wanted to push the immersion further. I wanted players to hold Artcards that make them feel fully immersed in the brutal world of Royal Betrayal. So, I sent cold emails to various professional TCG artists.',
-      'After multiple conversations, we are incredibly honored to announce that the legendary artist ██████████ has joined our project! For his very first board game project, Saitou-sensei is crafting a breathtaking, cinematic scene. We made sure the core artwork explicitly depicts a Guard protecting the Prince—ensuring everyone instantly knows this is a heavily cooperative game, rather than a solo mission.',
+      'After multiple conversations, we are incredibly honored to announce that the legendary artist ██████████ has joined our project! For his very first board game project, ██████████ is crafting a breathtaking, cinematic scene. We made sure the core artwork explicitly depicts a Guard protecting the Prince,ensuring everyone instantly knows this is a heavily cooperative game, rather than a solo mission.',
       'As for the rest of this masterpiece? We are keeping the chilling details and the true faces of the Traitors shrouded in mystery. You will have to get your hands on the First Edition to see the full, glorious picture for yourself.',
     ],
   },
