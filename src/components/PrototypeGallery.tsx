@@ -68,7 +68,7 @@ export function PrototypeGallery() {
           <div className="inline-flex items-center gap-1.5 mt-6 px-3 py-1.5 rounded-full bg-dark-400/60 border border-dark-50/10">
             <ShieldCheck className="w-3.5 h-3.5 text-primary-500" />
             <span className="font-sans text-xs text-secondary-400 select-none">
-              Prototype photos are protected
+              Prototype shown. Final art, layout, and components are subject to minor adjustments.
             </span>
           </div>
         </motion.div>
