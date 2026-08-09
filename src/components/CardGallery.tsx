@@ -108,6 +108,9 @@ export function CardGallery() {
           <p className="section-subtitle">
             Explore all 52 cards. Click to flip and reveal the back
           </p>
+          <p className="text-sm text-gray-400 mt-2">
+            Prototype shown. Final art, layout, and components are subject to minor adjustments.
+          </p>
         </motion.div>
 
         <motion.div
