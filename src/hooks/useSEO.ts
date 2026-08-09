@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 interface SEOOptions {
-  title: string;
+  title?: string;
   description: string;
   keywords?: string;
   image?: string;
@@ -20,25 +20,22 @@ function setMeta(attr: 'name' | 'property', key: string, content: string) {
   element.setAttribute('content', content);
 }
 
-function setTag(tag: 'title', content: string) {
-  document.title = content;
-}
+const SITE_TITLE = 'Royal Betrayal';
 
-export function useSEO({ title, description, keywords, image }: SEOOptions) {
+export function useSEO({ description, keywords, image }: SEOOptions) {
   useEffect(() => {
-    const fullTitle = `${title} | Royal Betrayal: Attack of Wolloofy`;
-    setTag('title', fullTitle);
-    setMeta('name', 'title', fullTitle);
+    document.title = SITE_TITLE;
+    setMeta('name', 'title', SITE_TITLE);
     setMeta('name', 'description', description);
     if (keywords) setMeta('name', 'keywords', keywords);
 
-    setMeta('property', 'og:title', fullTitle);
+    setMeta('property', 'og:title', SITE_TITLE);
     setMeta('property', 'og:description', description);
     setMeta('property', 'og:image', image || DEFAULT_IMAGE);
     setMeta('property', 'og:url', SITE_URL);
 
-    setMeta('name', 'twitter:title', fullTitle);
+    setMeta('name', 'twitter:title', SITE_TITLE);
     setMeta('name', 'twitter:description', description);
     setMeta('name', 'twitter:image', image || DEFAULT_IMAGE);
-  }, [title, description, keywords, image]);
+  }, [description, keywords, image]);
 }
