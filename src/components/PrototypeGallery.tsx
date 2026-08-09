@@ -10,6 +10,8 @@ const prototypePhotos = [
   'real play photo (5).jpg',
   'real play photo (6).jpg',
   'real play photo (7).jpg',
+  'real play photo (8).jpg',
+  'real play photo (9).jpg',
 ];
 
 const containerVariants = {
@@ -78,32 +80,32 @@ export function PrototypeGallery() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5"
         >
           {prototypePhotos.map((photo, index) => (
             <motion.figure
               key={photo}
               variants={itemVariants}
               className={`relative group overflow-hidden rounded-xl bg-dark-400 border border-dark-50/10 shadow-lg hover:shadow-glow hover:border-primary-500/30 transition-all duration-500 select-none ${
-                index === 0 ? 'sm:col-span-2 lg:col-span-2 lg:row-span-2' : ''
+                index === 0
+                  ? 'col-span-2 lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto'
+                  : 'aspect-square'
               }`}
               onContextMenu={(e) => e.preventDefault()}
             >
-              <div className="relative w-full h-full pointer-events-none">
+              <div className="absolute inset-0 w-full h-full pointer-events-none">
                 <img
                   src={`/${photo}`}
                   alt={`Royal Betrayal prototype play session photo ${index + 1}`}
                   draggable={false}
                   onContextMenu={(e) => e.preventDefault()}
                   onDragStart={(e) => e.preventDefault()}
-                  className={`w-full object-cover prevent-download select-none pointer-events-none ${
-                    index === 0 ? 'h-64 sm:h-80 lg:h-full min-h-[20rem]' : 'h-48 sm:h-56 lg:h-64'
-                  }`}
+                  className="w-full h-full object-cover prevent-download select-none pointer-events-none"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-950/70 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              <figcaption className="absolute bottom-0 left-0 right-0 p-4 pointer-events-none">
+              <figcaption className="absolute bottom-0 left-0 right-0 p-3 md:p-4 pointer-events-none">
                 <span className="font-sans text-xs text-secondary-400/80 tracking-wider uppercase">
                   Prototype Session {String(index + 1).padStart(2, '0')}
                 </span>
