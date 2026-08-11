@@ -33,7 +33,7 @@ export function Footer() {
             className="flex items-center gap-6 text-sm font-sans text-secondary-400"
           >
             <a
-              href="https://tabletopia.com/games/royalbetrayal-attackofwolloofy-4xuty9/680x340"
+              href="https://tabletopia.com/games/royalbetrayal-attackofwolloofy"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-400 transition-colors flex items-center gap-1"
