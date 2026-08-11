@@ -83,7 +83,7 @@ export function PlayOnline() {
             </div>
 
             <motion.a
-              href="https://tabletopia.com/games/royalbetrayal-attackofwolloofy-4xuty9/680x340"
+              href="https://tabletopia.com/games/royalbetrayal-attackofwolloofy"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(242, 117, 15, 0.5)' }}
