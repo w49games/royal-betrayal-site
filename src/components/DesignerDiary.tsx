@@ -106,15 +106,7 @@ const sections = [
       'As for the rest of this masterpiece? We are keeping the chilling details and the true faces of the Traitors shrouded in mystery. You will have to get your hands on the First Edition to see the full, glorious picture for yourself.',
     ],
   },
-  {
-    icon: Package,
-    title: 'The Hidden Iceberg of Indie Publishing',
-    body: [
-      'Designing the game was only 10% of the work. Once the mechanics were solid, a massive wave of administrative tasks hit us. Suddenly, I wasn\'t just a designer; I had to become a project manager. We had to register a company, set up a postal address, build a website, and ensure all our business documentation and tax reporting were perfectly in order.',
-      'We spent weeks getting quotes for graphic design, prototyping, and mass manufacturing. We had to study shipping routes, calculate exact box weights, and research legal regulations.',
-      'And the hardest part? Doing all of that just means you have a product. The real Final Boss of indie publishing is Marketing. Navigating the world of community building and trying to get a passion project noticed is a daunting new adventure, and we are learning every single day.',
-    ],
-  },
+ 
   {
     icon: Heart,
     title: 'Building a Lasting IP & The First Edition Exclusives',
