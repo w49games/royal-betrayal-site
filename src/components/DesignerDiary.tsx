@@ -20,15 +20,6 @@ const sections = [
     ],
   },
   {
-    icon: Shield,
-    title: 'The 20-Version Crucible & International Standards',
-    body: [
-      'We didn\'t wait for fancy components to start testing. Our very first prototype was literally just text printed on standard A4 paper, cut out, and sleeved with my personal collection of Pokémon and One Piece trading cards just to give them that professional snap and shuffling weight.',
-      'We playtested aggressively, simulating massive 4, 5, and 6-player games by controlling multiple hands ourselves, then unleashing it on relatives and church friends. We listened, analyzed the feedback like engineers, and relentlessly rebuilt the game. We tore it apart and reconstructed it over 20 times.',
-      'To ensure our game could stand up to global standards, we even submitted our core concepts to prestigious contests like the Cardboard Edison Award and the 45th International Contest of Boulogne-Billancourt. The invaluable professional feedback from industry veterans helped us lock in the intense mechanics you will soon experience.',
-    ],
-  },
-  {
     icon: Swords,
     title: 'Designing the Mind Games: Why Every Turn Hurts',
     body: [
