@@ -71,9 +71,10 @@ const sections = [
       { label: 'The Loyalist Victory', text: 'Wolloofy dies, The Prince survives.' },
       { label: 'The Overlord Victory', text: 'Wolloofy devours everyone, reducing all players\' hands to zero.' },
       { label: 'The Regicide Victory (Traitors)', text: 'Wolloofy dies, and The Prince is successfully assassinated.' },
+       { label: 'Traitor Betrayal Victory', text: 'The Traitor completes 【Victory Condition】 shown on 【Destiny Card】 (Regardless of whether The Prince lives or dies)' },
     ],
     bodyAfter: [
-      'But here is where the game truly earns the name Royal Betrayal. You cannot even trust your fellow Traitors. We engineered a system where Traitors might be pursuing an "Ambition" victory. This means they only care about completing the secret condition printed on their personal Destiny Card, regardless of whether the Prince lives or dies!',
+      'Here is where the game truly earns the name Royal Betrayal. You cannot even trust your fellow Traitors. We engineered a system where Traitors might be pursuing an "Ambition" victory. This means they only care about completing the secret condition printed on their personal Destiny Card, regardless of whether the Prince lives or dies!',
       'For example, if the Traitor faction is losing, a player holding the Dragonslayer destiny card can completely abandon the assassination plot. They can pretend to be a Loyalist, help the team survive, and steal a solo victory by landing the final blow on the Boss themselves. You have to constantly read the table and question the motives of everyone even your fellow conspirators.',
     ],
   },
