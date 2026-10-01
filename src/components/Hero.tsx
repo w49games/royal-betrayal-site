@@ -1,10 +1,8 @@
-import { useState, type FormEvent } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Users, Clock, Shield, Swords, Bell, Skull, Send, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Users, Clock, Shield, Swords, Skull, ExternalLink } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mojgjkva';
-const HERO_SUCCESS_MESSAGE = 'Thanks for joining! We will notify you when the campaign goes live.';
+const GAMEFOUND_URL = 'https://gamefound.com/en/projects/w49-games/royal-betrayal-attack-of-wolloofy';
 
 const badges = [
   { icon: Users, label: '4-6 Players' },
@@ -86,38 +84,19 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex items-center justify-center"
           >
-            <motion.button
-              onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
-              whileHover={{ scale: 1.05, boxShadow: '0 0 50px rgba(242, 117, 15, 0.6)' }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-primary-500 text-dark-950 font-sans font-bold text-lg rounded-lg shadow-glow-lg transition-all duration-300 flex items-center gap-2 cursor-pointer"
-            >
-              <Bell className="w-5 h-5" />
-              Join the Waitlist
-            </motion.button>
-
             <motion.a
-              href="https://tabletopia.com/games/royalbetrayal-attackofwolloofy"
+              href={GAMEFOUND_URL}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(242, 117, 15, 0.5)' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 60px rgba(242, 117, 15, 0.7)' }}
               whileTap={{ scale: 0.95 }}
-              className="btn-secondary flex items-center gap-2 text-lg"
+              className="group relative px-10 py-5 bg-primary-500 hover:bg-primary-400 text-dark-950 font-sans font-bold text-lg md:text-xl rounded-xl shadow-glow-lg animate-pulse-glow transition-all duration-300 flex items-center gap-3 cursor-pointer"
             >
-              <Play className="w-5 h-5" />
-              Play on Tabletopia
+              <ExternalLink className="w-5 h-5" />
+              Follow on Gamefound
             </motion.a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            className="mt-8 w-full max-w-md mx-auto"
-          >
-            <HeroSubscribeForm />
           </motion.div>
 
           <motion.div
@@ -152,73 +131,5 @@ export function Hero() {
         </div>
       </motion.div>
     </section>
-  );
-}
-
-function HeroSubscribeForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    const formData = new FormData(e.currentTarget);
-    try {
-      await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
-      });
-      setIsSubmitted(true);
-    } catch {
-      setIsSubmitted(true);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  return (
-    <div>
-      <AnimatePresence mode="wait">
-        {isSubmitted ? (
-          <motion.div
-            key="success"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="flex items-center justify-center gap-1.5 text-success-400"
-          >
-            <CheckCircle2 className="w-4 h-4" />
-            <span className="font-sans text-xs">{HERO_SUCCESS_MESSAGE}</span>
-          </motion.div>
-        ) : (
-          <motion.form
-            key="form"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onSubmit={handleSubmit}
-            className="flex items-center gap-2"
-          >
-            <input
-              type="email"
-              name="email"
-              placeholder="Get launch updates"
-              required
-              className="flex-1 px-4 py-2.5 bg-dark-400/60 backdrop-blur-sm border border-dark-50/20 rounded-lg text-secondary-100 placeholder:text-secondary-500 font-sans text-sm focus:outline-none focus:border-primary-500/60 focus:ring-2 focus:ring-primary-500/20 transition-all duration-300"
-            />
-            <motion.button
-              type="submit"
-              disabled={isSubmitting}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 text-dark-950 font-sans font-semibold text-sm rounded-lg shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center gap-1.5 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              <Send className="w-4 h-4" />
-              <span className="hidden sm:inline">{isSubmitting ? '...' : 'Notify Me'}</span>
-            </motion.button>
-          </motion.form>
-        )}
-      </AnimatePresence>
-    </div>
   );
 }
