@@ -48,7 +48,8 @@ export function HowToPlay() {
         >
           <h2 className="section-title mb-4">How to Play</h2>
           <p className="section-subtitle">
-            Watch the full gameplay walkthrough to master the rules and strategies
+            Watch the full gameplay walkthrough to master the rules and strategies.  
+            The video will be publicly available on 3rd October 2026.Stay tuned!
           </p>
         </motion.div>
 
